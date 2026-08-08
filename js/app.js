@@ -48,7 +48,8 @@
     const other = isAr ? "en" : "ar";
     if (other === "en") u.delete("lang"); else u.set("lang", other);
     const q = u.toString();
-    return location.pathname.split("/").pop() + (q ? "?" + q : "");
+    const file = location.pathname.split("/").pop() || "index.html";
+    return file + (q ? "?" + q : "");
   }
 
   function virtueById(id) { return VIRTUES.find(v => v.id === id); }
