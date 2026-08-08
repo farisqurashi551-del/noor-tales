@@ -3,29 +3,18 @@
    Two independent classification axes; every story belongs to
    exactly one people-category and any number of virtues.
 
-   NOTE ON THE VIRTUES LIST — this is a *seed* list of the noble
-   virtues (makārim al-akhlāq) celebrated by the Arabs and
-   associated with their pacts at the Kaaba (e.g. Ḥilf al-Fuḍūl).
-   It is intended to be reviewed against classical sources
-   (al-Aghānī, Bulūgh al-Arab fī Maʿrifat Aḥwāl al-ʿArab of
-   al-Ālūsī, etc.) and edited freely — this file is the single
-   place to do so.
+   NOTE ON THE VIRTUES LIST — curated order and composition set
+   by site editor (2026-08-08). Array order is the display order
+   used throughout the site (virtues page, badges, filters).
+   Edit freely — this file is the single place to do so.
    ============================================================ */
 
 const VIRTUES = [
-  { id: "truthfulness",   name: { en: "Truthfulness", ar: "الصدق" },
+  { id: "truthfulness",    name: { en: "Truthfulness", ar: "الصدق" },
     description: { en: "Saying the truth even against oneself, and living without a double face.",
                    ar: "قول الحق ولو على النفس، والعيش بوجه واحد لا وجهين." },
     icon: "🕊️" },
-  { id: "generosity",     name: { en: "Generosity", ar: "الكرم" },
-    description: { en: "Giving freely of wealth and self, expecting no return.",
-                   ar: "البذل من المال والنفس عن طيب خاطر دون انتظار مقابل." },
-    icon: "🌙" },
-  { id: "courage",        name: { en: "Courage", ar: "الشجاعة" },
-    description: { en: "Standing firm for what is right when standing costs something.",
-                   ar: "الثبات على الحق حين يكون للثبات ثمن." },
-    icon: "🛡️" },
-  { id: "loyalty",        name: { en: "Loyalty & Keeping Covenants", ar: "الوفاء بالعهد" },
+  { id: "loyalty",         name: { en: "Loyalty", ar: "الوفاء" },
     description: { en: "Honoring one's word and covenants, whatever the price.",
                    ar: "الوفاء بالكلمة والعهد مهما غلا الثمن." },
     icon: "🤝" },
@@ -33,26 +22,34 @@ const VIRTUES = [
     description: { en: "Guarding what is entrusted to you — property, secrets, and duties.",
                    ar: "حفظ ما اؤتمنت عليه من مالٍ وسرٍّ وواجب." },
     icon: "🗝️" },
-  { id: "neighborliness", name: { en: "Protecting Neighbors", ar: "حسن الجوار وحماية الجار" },
+  { id: "mudara",          name: { en: "Graciousness with People", ar: "مداراة الناس" },
+    description: { en: "Meeting people with gentleness and easy manners, softening friction and keeping harmony without compromising what is right.",
+                   ar: "لين الجانب مع الناس وحسن معاشرتهم، دفعًا للأذى وجلبًا للألفة من غير مداهنة في الحق." },
+    icon: "🌼" },
+  { id: "reciprocity",     name: { en: "Rewarding Good Deeds", ar: "المكافأة بالصنائع" },
+    description: { en: "Repaying a kindness with its like or better, so that no favor done for you goes unanswered.",
+                   ar: "مقابلة صنيع المعروف بمثله أو خير منه، فلا يذهب جميل صانعه سدى." },
+    icon: "🎁" },
+  { id: "generosity",      name: { en: "Generosity", ar: "الكرم" },
+    description: { en: "Giving freely of wealth and self, expecting no return.",
+                   ar: "البذل من المال والنفس عن طيب خاطر دون انتظار مقابل." },
+    icon: "🌙" },
+  { id: "neighborliness",  name: { en: "Good Neighborliness", ar: "حسن الجوار" },
     description: { en: "Sheltering and honoring the neighbor and those under one's protection.",
-                   ar: "إيواء الجار والمستجير وإكرامهما والذبّ عنهما." },
+                   ar: "إيواء الجار وإكرامه والذبّ عنه." },
     icon: "🏡" },
-  { id: "aiding",         name: { en: "Aiding the Distressed", ar: "إغاثة الملهوف" },
+  { id: "aiding",          name: { en: "Aiding the Distressed", ar: "إغاثة الملهوف" },
     description: { en: "Rushing to help the wronged, the stranded, and the desperate.",
                    ar: "المسارعة إلى نصرة المظلوم وعون المنقطع والملهوف." },
     icon: "🤲" },
-  { id: "forbearance",    name: { en: "Forbearance", ar: "الحلم" },
-    description: { en: "Meeting ignorance and provocation with patience and self-mastery.",
-                   ar: "مقابلة الجهل والاستفزاز بالصبر وضبط النفس." },
-    icon: "🌾" },
-  { id: "chastity",       name: { en: "Chastity & Honor", ar: "العفة" },
-    description: { en: "Purity and restraint in desire, wealth, and speech.",
-                   ar: "طهارة النفس وضبطها في الشهوة والمال واللسان." },
-    icon: "💠" },
-  { id: "hospitality",    name: { en: "Hospitality", ar: "إكرام الضيف" },
-    description: { en: "Welcoming the guest with the best of what one has, asked or unasked.",
-                   ar: "استقبال الضيف بأفضل الموجود، سأل أم لم يسأل." },
-    icon: "☕" }
+  { id: "ijarah",          name: { en: "Protecting the Refuge-Seeker", ar: "إجارة المستجير" },
+    description: { en: "Sheltering and defending whoever seeks protection, even at the cost of confronting the powerful.",
+                   ar: "حماية من يلجأ طالبًا الأمان والذبّ عنه، ولو كلّف ذلك مواجهة الأقوياء." },
+    icon: "⛺" },
+  { id: "courage",         name: { en: "Courage", ar: "الشجاعة" },
+    description: { en: "Standing firm for what is right when standing costs something.",
+                   ar: "الثبات على الحق حين يكون للثبات ثمن." },
+    icon: "🛡️" }
 ];
 
 const PEOPLE = [
