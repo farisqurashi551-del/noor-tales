@@ -13,7 +13,18 @@
      peopleCategory: "prophets" | "companions" | "tabiun" | "arabs",
      virtues: ["id", ...],     // ids from VIRTUES in taxonomies.js
      sources: [{ en, ar }, ...],
-     featured: true | false
+     featured: true | false,
+     seo: {                          // used for <title>/<meta> on story.html and for
+       metaTitle:       { en, ar },  // future social/AI-generated captions. All optional —
+       metaDescription: { en, ar },  // app.js falls back to title/excerpt when seo is absent.
+       keywords:         { en, ar },
+       pinterestDescription: { en, ar },
+       instagramHashtags:    { en, ar }
+     },
+     purchase: {                     // story.html shows ONLY the title plus these two links.
+       previewPdf: "",               // URL to a 2-3 page sample PDF ("read before buying").
+       gumroadUrl: ""                // URL to this story's Gumroad product page.
+     }                               // Leave either blank to hide that link/show "Coming soon".
    }
    ============================================================ */
 
@@ -41,7 +52,30 @@ const STORIES = [
       { en: "Qur'an, Sūrat Hūd 11:69–73", ar: "القرآن الكريم، سورة هود 69–73" },
       { en: "Tafsīr Ibn Kathīr on Sūrat al-Dhāriyāt", ar: "تفسير ابن كثير لسورة الذاريات" }
     ],
-    featured: true
+    featured: true,
+    seo: {
+      metaTitle: {
+        en: "Ibrahim's Hospitality: The Honored Guests Story",
+        ar: "إبراهيم عليه السلام وضيوفه المكرمون: قصة الضيافة"
+      },
+      metaDescription: {
+        en: "The Quranic story of Prophet Ibrahim (Abraham) and his honored guests — the moment that became the origin of Arab hospitality and generosity.",
+        ar: "قصة إبراهيم عليه السلام مع ضيوفه المكرمين من القرآن الكريم، وكيف أصبح أبا الضيافة عند العرب. اقرأ القصة كاملة."
+      },
+      keywords: {
+        en: "Prophet Ibrahim story, Abraham hospitality, honored guests Quran, Arab hospitality origin, Ibrahim generosity, Islamic stories of the prophets",
+        ar: "قصة إبراهيم عليه السلام, ضيوف إبراهيم, قصص الأنبياء, الضيافة عند العرب, قصص قرآنية, كرم إبراهيم عليه السلام"
+      },
+      pinterestDescription: {
+        en: "The story of Prophet Ibrahim (Abraham) and the honored guests — how one act of generosity became the origin of Arab hospitality. A timeless tale of faith and giving.",
+        ar: "قصة إبراهيم عليه السلام مع ضيوفه المكرمين — كيف صارت لحظة كرم واحدة أصل الضيافة عند العرب. قصة خالدة عن الإيمان والعطاء."
+      },
+      instagramHashtags: {
+        en: "#ProphetIbrahim #IslamicStories #ArabHospitality #QuranStories #ProphetsOfIslam #IslamicHistory #NoorTales #MuslimStories #Hospitality #FaithStories",
+        ar: "#إبراهيم_عليه_السلام #قصص_الأنبياء #الضيافة_عند_العرب #قصص_قرآنية #قصص_إسلامية #نور_تيلز #التراث_العربي #كرم_وعطاء"
+      }
+    },
+    purchase: { previewPdf: "", gumroadUrl: "" }
   },
 
   /* ---------- 2. COMPANION STORY ---------- */
@@ -65,7 +99,30 @@ const STORIES = [
       { en: "Sunan Abī Dāwūd 1678; Jāmiʿ al-Tirmidhī 3675 (graded ḥasan)", ar: "سنن أبي داود 1678؛ جامع الترمذي 3675 (حسّنه الترمذي)" },
       { en: "Narrated by Umar ibn al-Khattab, may Allah be pleased with him", ar: "من حديث عمر بن الخطاب رضي الله عنه" }
     ],
-    featured: true
+    featured: true,
+    seo: {
+      metaTitle: {
+        en: "Abu Bakr Gives Everything: “I Left Them Allah”",
+        ar: "أبو بكر يتصدق بماله كله: «أبقيت لهم الله ورسوله»"
+      },
+      metaDescription: {
+        en: "The story of Abu Bakr at the Battle of Tabuk, who gave away all his wealth and said: “I left them Allah and His Messenger.” A lesson in trust and generosity.",
+        ar: "قصة أبي بكر الصديق رضي الله عنه في غزوة تبوك حين تصدق بكل ماله، وقال: «أبقيت لهم الله ورسوله». درس في الثقة والكرم."
+      },
+      keywords: {
+        en: "Abu Bakr story, Battle of Tabuk, Abu Bakr generosity, companions of the prophet stories, Islamic stories of trust, Sahaba stories",
+        ar: "قصة أبو بكر الصديق, غزوة تبوك, كرم الصحابة, قصص الصحابة, أبو بكر الصديق, قصص إسلامية عن الثقة بالله"
+      },
+      pinterestDescription: {
+        en: "Abu Bakr gave away everything he owned for the sake of Allah — and when asked what he left his family, he said: “Allah and His Messenger.” A story of ultimate trust.",
+        ar: "أبو بكر الصديق يتصدق بكل ماله في سبيل الله، وحين سُئل ماذا أبقى لأهله قال: «الله ورسوله». قصة عن الثقة المطلقة."
+      },
+      instagramHashtags: {
+        en: "#AbuBakr #Sahaba #IslamicStories #BattleOfTabuk #CompanionsOfTheProphet #IslamicHistory #NoorTales #TrustInAllah #MuslimStories",
+        ar: "#أبو_بكر_الصديق #الصحابة #قصص_إسلامية #غزوة_تبوك #صحابة_رسول_الله #نور_تيلز #الثقة_بالله #قصص_قرآنية"
+      }
+    },
+    purchase: { previewPdf: "", gumroadUrl: "" }
   },
 
   /* ---------- 3. ARAB STORY ---------- */
@@ -90,7 +147,30 @@ const STORIES = [
       { en: "Majmaʿ al-Amthāl of al-Maydānī — the proverb “awfā min al-Samawʾal”", ar: "مجمع الأمثال للميداني — مَثَل «أوفى من السموأل»" },
       { en: "Al-Shiʿr wa-l-Shuʿarāʾ of Ibn Qutaybah", ar: "الشعر والشعراء لابن قتيبة" }
     ],
-    featured: true
+    featured: true,
+    seo: {
+      metaTitle: {
+        en: "More Faithful than al-Samaw'al: An Arab Loyalty Tale",
+        ar: "أوفى من السموأل: قصة الوفاء عند العرب"
+      },
+      metaDescription: {
+        en: "The pre-Islamic Arab proverb “more faithful than al-Samaw'al” — the story of a father who kept his trust even at the cost of his son's life.",
+        ar: "قصة المثل العربي «أوفى من السموأل» — أب يحافظ على الأمانة حتى وهو يرى ابنه يُقتل أمام عينيه. قصة خالدة عن الوفاء والشرف."
+      },
+      keywords: {
+        en: "al-Samawal story, Arab proverbs, awfa min al-Samawal, pre-Islamic Arab stories, loyalty in Arab culture, Arab honor stories",
+        ar: "قصة السموأل, أمثال عربية, أوفى من السموأل, قصص عربية قبل الإسلام, الوفاء عند العرب, قصص الشرف والأمانة"
+      },
+      pinterestDescription: {
+        en: "The Arab proverb “more faithful than al-Samaw'al” — a father's ultimate test of loyalty and keeping a trust, even when it cost him everything.",
+        ar: "المثل العربي «أوفى من السموأل» — قصة أب حافظ على الأمانة حتى الرمق الأخير. قصة خالدة عن الوفاء والشرف عند العرب."
+      },
+      instagramHashtags: {
+        en: "#ArabProverbs #ArabHistory #PreIslamicArabia #Loyalty #ArabCulture #NoorTales #ArabianStories #Honor #ArabHeritage",
+        ar: "#أوفى_من_السموأل #أمثال_عربية #التراث_العربي #الوفاء #قصص_عربية #نور_تيلز #الشرف_والأمانة #العرب_قبل_الإسلام"
+      }
+    },
+    purchase: { previewPdf: "", gumroadUrl: "" }
   }
 
 ];

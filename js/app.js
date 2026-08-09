@@ -42,6 +42,18 @@
     return page + (q ? "?" + q : "");
   }
 
+  /* Create-or-update a <meta name="..."> tag in <head> */
+  function setMeta(name, content) {
+    if (!content) return;
+    let el = document.head.querySelector('meta[name="' + name + '"]');
+    if (!el) {
+      el = document.createElement("meta");
+      el.setAttribute("name", name);
+      document.head.appendChild(el);
+    }
+    el.setAttribute("content", content);
+  }
+
   /* Current URL with the language swapped (for the toggle) */
   function langSwapUrl() {
     const u = new URLSearchParams(location.search);
@@ -78,13 +90,16 @@
   }
 
   /* ---------- Header & footer (injected once, defined here only) ---------- */
+  const SHOP_URL = "https://qurashi1.gumroad.com/";
+
   const NAV_ITEMS = [
     ["index.html",   "nav.home"],
     ["stories.html", "nav.stories"],
     ["virtues.html", "nav.virtues"],
     ["sources.html", "nav.sources"],
     ["about.html",   "nav.about"],
-    ["contact.html", "nav.contact"]
+    ["contact.html", "nav.contact"],
+    [SHOP_URL,        "nav.shop", true] // true = external link
   ];
 
   function currentPageFile() {
@@ -95,9 +110,11 @@
     const host = document.getElementById("site-header");
     if (!host) return;
     const cur = currentPageFile();
-    const links = NAV_ITEMS.map(([page, key]) =>
-      '<li><a href="' + url(page) + '"' +
-      (page === cur ? ' aria-current="page"' : "") + ">" + esc(t(key)) + "</a></li>"
+    const links = NAV_ITEMS.map(([page, key, external]) =>
+      external
+        ? '<li><a href="' + esc(page) + '" target="_blank" rel="noopener">' + esc(t(key)) + "</a></li>"
+        : '<li><a href="' + url(page) + '"' +
+          (page === cur ? ' aria-current="page"' : "") + ">" + esc(t(key)) + "</a></li>"
     ).join("");
     host.innerHTML =
       '<header class="site-header"><div class="container">' +
@@ -112,8 +129,10 @@
   function renderFooter() {
     const host = document.getElementById("site-footer");
     if (!host) return;
-    const links = NAV_ITEMS.map(([page, key]) =>
-      '<li><a href="' + url(page) + '">' + esc(t(key)) + "</a></li>"
+    const links = NAV_ITEMS.map(([page, key, external]) =>
+      external
+        ? '<li><a href="' + esc(page) + '" target="_blank" rel="noopener">' + esc(t(key)) + "</a></li>"
+        : '<li><a href="' + url(page) + '">' + esc(t(key)) + "</a></li>"
     ).join("");
     host.innerHTML =
       '<footer class="site-footer"><div class="container">' +
@@ -293,33 +312,30 @@
       return;
     }
     const s = STORIES[idx];
-    document.title = loc(s.title) + " — " + t("site.name");
+    const seo = s.seo || {};
+    document.title = (loc(seo.metaTitle) || loc(s.title)) + " — " + t("site.name");
+    setMeta("description", loc(seo.metaDescription) || loc(s.excerpt));
+    setMeta("keywords", loc(seo.keywords));
 
-    const prev = STORIES[idx - 1];
-    const next = STORIES[idx + 1];
+    const purchase = s.purchase || {};
 
     main.innerHTML =
       '<section class="section"><div class="container story-page">' +
       '<header class="story-header">' +
-      '<div class="story-meta-row">' + peopleBadge(s.peopleCategory) + "</div>" +
       "<h1>" + esc(loc(s.title)) + "</h1>" + ornament() +
-      '<div class="story-meta-row" aria-label="' + esc(t("story.virtues")) + '">' +
-      s.virtues.map(virtueBadge).join("") + "</div>" +
       "</header>" +
-      '<div class="story-body">' + loc(s.body) + "</div>" +
-      '<aside class="story-aside"><h2>' + esc(t("story.sources")) + "</h2>" +
-      '<ul class="sources-list">' + s.sources.map(src => "<li>" + esc(loc(src)) + "</li>").join("") + "</ul></aside>" +
-      '<nav class="story-nav" aria-label="' + esc(t("story.back")) + '">' +
-      (prev
-        ? '<a href="' + url("story.html", { id: prev.id }) + '"><span class="nav-label">' +
-          esc(t("story.prev")) + "</span>" + esc(loc(prev.title)) + "</a>"
-        : "<span></span>") +
-      '<a href="' + url("stories.html") + '"><span class="nav-label">&nbsp;</span>' + esc(t("story.back")) + "</a>" +
-      (next
-        ? '<a href="' + url("story.html", { id: next.id }) + '"><span class="nav-label">' +
-          esc(t("story.next")) + "</span>" + esc(loc(next.title)) + "</a>"
-        : "<span></span>") +
-      "</nav></div></section>";
+      '<div class="story-purchase">' +
+      (purchase.previewPdf
+        ? '<a class="preview-link" href="' + esc(purchase.previewPdf) + '" target="_blank" rel="noopener">' +
+          esc(t("story.readSample")) + "</a>"
+        : "") +
+      (purchase.gumroadUrl
+        ? '<a class="btn btn-buy" href="' + esc(purchase.gumroadUrl) + '" target="_blank" rel="noopener">' +
+          esc(t("story.buyNow")) + "</a>"
+        : '<span class="btn btn-outline btn-disabled">' + esc(t("story.comingSoon")) + "</span>") +
+      "</div>" +
+      '<nav class="story-nav-simple"><a href="' + url("stories.html") + '">' + esc(t("story.back")) + "</a></nav>" +
+      "</div></section>";
   }
 
   /* ---------- Page: Virtues ---------- */

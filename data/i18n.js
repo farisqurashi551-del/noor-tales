@@ -18,6 +18,7 @@ const I18N = {
   "nav.sources":  { en: "Sources",   ar: "المصادر" },
   "nav.about":    { en: "About",     ar: "عنّا" },
   "nav.contact":  { en: "Contact",   ar: "تواصل معنا" },
+  "nav.shop":     { en: "Shop",      ar: "المتجر" },
   "nav.menu":     { en: "Menu",      ar: "القائمة" },
   "lang.toggle":  { en: "ع",         ar: "EN" },
   "lang.toggleLabel": { en: "التبديل إلى العربية", ar: "Switch to English" },
@@ -59,6 +60,9 @@ const I18N = {
   "story.back":      { en: "All stories", ar: "جميع القصص" },
   "story.notFound":  { en: "Story not found. It may have been moved or is not written yet.",
                        ar: "لم يتم العثور على القصة. ربما نُقلت أو لم تُكتب بعد." },
+  "story.readSample": { en: "Read a free sample before buying (PDF)", ar: "اقرأ عيّنة مجانية قبل الشراء (PDF)" },
+  "story.buyNow":      { en: "Buy the full story (PDF)", ar: "اشترِ القصة كاملة (PDF)" },
+  "story.comingSoon":  { en: "Coming soon", ar: "قريبًا" },
 
   /* Virtues page */
   "virtues.title": { en: "The Noble Virtues", ar: "مكارم الأخلاق" },

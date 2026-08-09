@@ -302,6 +302,29 @@ html[dir="rtl"] .story-body { font-size: 1.15rem; line-height: 2; }
 .story-body p + p { margin-block-start: 1.1rem; text-indent: 0; }
 .story-body em { color: var(--teal); }
 
+.story-purchase {
+  background: var(--card); border: 1px solid var(--sand);
+  border-radius: var(--radius); box-shadow: var(--shadow);
+  padding: clamp(1.4rem, 4vw, 2.6rem);
+  display: flex; flex-direction: column; align-items: center; gap: 1.2rem;
+  text-align: center;
+}
+.preview-link {
+  color: var(--teal); font-weight: 600; text-decoration: none;
+  border-bottom: 1px dashed var(--teal); padding-block-end: .1rem;
+}
+.preview-link:hover { color: var(--gold); border-color: var(--gold); }
+.btn-buy { font-size: 1.05rem; padding: .8rem 2.2rem; }
+.btn-disabled { opacity: .55; cursor: not-allowed; }
+
+.story-nav-simple { text-align: center; margin-block-start: 2rem; }
+.story-nav-simple a {
+  text-decoration: none; color: var(--teal); font-weight: 600;
+  padding: .6rem 1.2rem; border: 1px solid var(--sand); border-radius: 8px;
+  background: var(--card);
+}
+.story-nav-simple a:hover { border-color: var(--gold); color: var(--gold); }
+
 .story-aside { margin-block-start: 2rem; }
 .story-aside h2 { font-size: 1.15rem; margin-block-end: .6rem; }
 .sources-list { padding-inline-start: 1.2rem; color: var(--text-soft); font-size: .95rem; }
