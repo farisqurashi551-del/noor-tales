@@ -318,24 +318,46 @@
     setMeta("keywords", loc(seo.keywords));
 
     const purchase = s.purchase || {};
+    const hasPurchase = purchase.previewPdf || purchase.gumroadUrl;
+    const prev = STORIES[idx - 1];
+    const next = STORIES[idx + 1];
 
     main.innerHTML =
       '<section class="section"><div class="container story-page">' +
       '<header class="story-header">' +
+      '<div class="story-meta-row">' + peopleBadge(s.peopleCategory) + "</div>" +
       "<h1>" + esc(loc(s.title)) + "</h1>" + ornament() +
+      '<div class="story-meta-row" aria-label="' + esc(t("story.virtues")) + '">' +
+      s.virtues.map(virtueBadge).join("") + "</div>" +
       "</header>" +
-      '<div class="story-purchase">' +
-      (purchase.previewPdf
-        ? '<a class="preview-link" href="' + esc(purchase.previewPdf) + '" target="_blank" rel="noopener">' +
-          esc(t("story.readSample")) + "</a>"
+      '<div class="story-body">' + loc(s.body) + "</div>" +
+      (hasPurchase
+        ? '<div class="story-purchase">' +
+          (purchase.previewPdf
+            ? '<a class="preview-link" href="' + esc(purchase.previewPdf) + '" target="_blank" rel="noopener">' +
+              esc(t("story.readSample")) + "</a>"
+            : "") +
+          (purchase.gumroadUrl
+            ? '<a class="btn btn-buy" href="' + esc(purchase.gumroadUrl) + '" target="_blank" rel="noopener">' +
+              esc(t("story.buyNow")) + "</a>"
+            : "") +
+          "</div>"
         : "") +
-      (purchase.gumroadUrl
-        ? '<a class="btn btn-buy" href="' + esc(purchase.gumroadUrl) + '" target="_blank" rel="noopener">' +
-          esc(t("story.buyNow")) + "</a>"
-        : '<span class="btn btn-outline btn-disabled">' + esc(t("story.comingSoon")) + "</span>") +
-      "</div>" +
-      '<nav class="story-nav-simple"><a href="' + url("stories.html") + '">' + esc(t("story.back")) + "</a></nav>" +
-      "</div></section>";
+      (s.sources && s.sources.length
+        ? '<aside class="story-aside"><h2>' + esc(t("story.sources")) + "</h2>" +
+          '<ul class="sources-list">' + s.sources.map(src => "<li>" + esc(loc(src)) + "</li>").join("") + "</ul></aside>"
+        : "") +
+      '<nav class="story-nav" aria-label="' + esc(t("story.back")) + '">' +
+      (prev
+        ? '<a href="' + url("story.html", { id: prev.id }) + '"><span class="nav-label">' +
+          esc(t("story.prev")) + "</span>" + esc(loc(prev.title)) + "</a>"
+        : "<span></span>") +
+      '<a href="' + url("stories.html") + '"><span class="nav-label">&nbsp;</span>' + esc(t("story.back")) + "</a>" +
+      (next
+        ? '<a href="' + url("story.html", { id: next.id }) + '"><span class="nav-label">' +
+          esc(t("story.next")) + "</span>" + esc(loc(next.title)) + "</a>"
+        : "<span></span>") +
+      "</nav></div></section>";
   }
 
   /* ---------- Page: Virtues ---------- */

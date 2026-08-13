@@ -178,15 +178,15 @@ const STORIES = [
     id: "yusuf-trusted-boy",
     title: {
       en: "The Trusted Boy — The Story of Prophet Yusuf (Joseph)",
-      ar: "الفتى الأمين — قصة يوسف عليه السلام"
+      ar: "الغُلام الأمين — قصة يوسف عليه السلام"
     },
     excerpt: {
       en: "From the bottom of a dark well to the treasuries of Egypt — a 49-page illustrated story for ages 4–12 about the boy who kept his integrity whatever it cost him.",
-      ar: "من قاع بئر مظلم إلى خزائن مصر — قصة مصوّرة من 49 صفحة للأعمار 4–12 عن الفتى الذي حافظ على أمانته مهما كلّفه ذلك."
+      ar: "رحلةٌ من قاع بئر مظلم إلى خزائن مصر — قصة كاملة من 49 صفحة بلغة عربية فصيحة مبسّطة ومشكولة، للأعمار 4 إلى 12 سنة، تغرس قيمة الأمانة والعفّة."
     },
     body: {
       en: "<p>They took his shirt, and they lowered him into the well. The well was cold and dark, and the sound of water echoed far below. Yusuf lifted his head to a small circle of light high above him… then he closed his eyes and called on Allah in his heart. And whoever calls on Allah is never truly alone.</p><p>Years later, in a locked room, his shirt would tear again — this time from the back, the mark that proved his innocence to everyone who saw it. And when a king's messenger finally came to free him from prison, Yusuf refused to walk out until his name was clean. <em>“The Trusted Boy”</em> follows him from that well to the treasuries of Egypt, in nine chapters written for children ages 4–12, with a “Think With Me” page after every chapter and a companion coloring book — every detail traced to the classical books of tafsīr and prophetic history.</p>",
-      ar: "<p>أخذوا قميصه، وأدلَوه في البئر. كان الجوّ باردًا مظلمًا، وصدى الماء يتردّد من الأسفل. رفع يوسف رأسه إلى دائرة ضوء صغيرة بعيدة فوقه… ثم أغمض عينيه ودعا الله في قلبه. ومن دعا الله فلن يكون وحيدًا حقًا.</p><p>وبعد سنين، في غرفة موصدة، سيتمزّق قميصه من جديد — هذه المرة من الخلف، العلامة التي أثبتت براءته لكل من رآها. ولما جاءه رسول الملك أخيرًا ليُخرجه من السجن، أبى يوسف أن يخرج حتى تتضح براءته للناس. تتبع قصة <em>«الفتى الأمين»</em> رحلته من تلك البئر إلى خزائن مصر، في تسعة فصول كُتبت للأطفال من سن 4 إلى 12 سنة، مع صفحة «فكّر معي» بعد كل فصل وكتاب تلوين مرافق — وكل تفصيلة فيها موثّقة من كتب التفسير والسيرة النبوية المعتمدة.</p>"
+      ar: "<p>ابتعد إخوته به عن البيت، وهناك تغيّرت الوجوه. أخذوا قميص يوسف وأنزلوه إلى قاع بئر مظلمة باردة، يتردّد صوت الماء في أسفلها. رفع يوسف رأسه إلى دائرة ضوء صغيرة بعيدة في الأعلى، ثم أغمض عينيه ودعا الله في قلبه. ومَن دعا الله لم يكن وحيدًا أبدًا.</p><p>وبعد سنين، في بيت العزيز، تمزّق قميصه من الخلف عند الباب، وفُتح الباب فجأة ليقف العزيز أمامه. اتُّهم يوسف بما لم يفعله. لكن رجلًا حكيمًا نظر إلى القميص وقال: «إن كان الشقّ من الأمام فهو المخطئ، وإن كان من الخلف فقد كان هاربًا». وكان الشقّ من الخلف، فظهرت براءته.</p><p>وفي السجن، حين أقلقت رؤيا الملكَ وطلب إحضار يوسف، جاءه الرسول يقول: اخرج، الملك يدعوك! فقال يوسف: «لا أخرج حتى يعلم الناس أنّي بريء». عجبًا لرجلٍ يُفتح له باب السجن فيرفض الخروج حتى يخرج نظيف الاسم.</p><p>من قاع البئر إلى خزائن مصر، تروي «الغُلام الأمين» رحلة يوسف عليه السلام في تسعة فصول، مع صندوق «فكّر معي» بعد كل فصل وكتاب تلوين مرافق — وكل تفصيلة فيها موثّقة من كتب التفسير والسيرة النبوية المعتمدة.</p>"
     },
     peopleCategory: "prophets",
     virtues: ["trustworthiness", "truthfulness"],
@@ -198,7 +198,7 @@ const STORIES = [
     seo: {
       metaTitle: {
         en: "The Trusted Boy: Prophet Yusuf Story for Kids",
-        ar: "الفتى الأمين: قصة يوسف عليه السلام للأطفال"
+        ar: "الغُلام الأمين: قصة يوسف عليه السلام للأطفال"
       },
       metaDescription: {
         en: "49-page illustrated story of Prophet Yusuf for ages 4-12. Teaches integrity. No prophet images. Coloring book included.",
@@ -210,7 +210,7 @@ const STORIES = [
       },
       pinterestDescription: {
         en: "Prophet Yusuf story for kids - a 49-page illustrated children's book for ages 4-12 that teaches honesty, integrity and modesty through story, not lecturing. Includes a 6-page printable coloring book, comprehension and moral discussion questions after every chapter, and a full academic reference page sourced from classical tafsir. Contains no images depicting the Prophet. Perfect for Muslim homeschool, Islamic weekend schools, and Ramadan activities. Instant PDF download - read a free sample first. Islamic children's books | Islamic stories for kids | Prophet stories for kids",
-        ar: "الفتى الأمين — قصة يوسف عليه السلام، من البئر إلى خزائن مصر. قصة إسلامية مصوّرة للأطفال من سن 4 إلى 12 سنة."
+        ar: "الغُلام الأمين — قصة يوسف عليه السلام، من البئر إلى خزائن مصر. قصة إسلامية مصوّرة للأطفال من سن 4 إلى 12 سنة."
       },
       instagramHashtags: {
         en: "#IslamicStoriesForKids #ProphetYusuf #MuslimKids #CharacterEducation #MuslimHomeschool #ChildrensBooks #StoryTime #TeachingIntegrity #KidsBooks #ProphetStories",
