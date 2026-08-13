@@ -171,6 +171,101 @@ const STORIES = [
       }
     },
     purchase: { previewPdf: "", gumroadUrl: "" }
+  },
+
+  /* ---------- 4. PROPHET STORY (purchasable) ---------- */
+  {
+    id: "yusuf-trusted-boy",
+    title: {
+      en: "The Trusted Boy — The Story of Prophet Yusuf (Joseph)",
+      ar: "الفتى الأمين — قصة يوسف عليه السلام"
+    },
+    excerpt: {
+      en: "From the bottom of a dark well to the treasuries of Egypt — a 49-page illustrated story for ages 4–12 about the boy who kept his integrity whatever it cost him.",
+      ar: "من قاع بئر مظلم إلى خزائن مصر — قصة مصوّرة من 49 صفحة للأعمار 4–12 عن الفتى الذي حافظ على أمانته مهما كلّفه ذلك."
+    },
+    body: {
+      en: "<p>They took his shirt, and they lowered him into the well. The well was cold and dark, and the sound of water echoed far below. Yusuf lifted his head to a small circle of light high above him… then he closed his eyes and called on Allah in his heart. And whoever calls on Allah is never truly alone.</p><p>Years later, in a locked room, his shirt would tear again — this time from the back, the mark that proved his innocence to everyone who saw it. And when a king's messenger finally came to free him from prison, Yusuf refused to walk out until his name was clean. <em>“The Trusted Boy”</em> follows him from that well to the treasuries of Egypt, in nine chapters written for children ages 4–12, with a “Think With Me” page after every chapter and a companion coloring book — every detail traced to the classical books of tafsīr and prophetic history.</p>",
+      ar: "<p>أخذوا قميصه، وأدلَوه في البئر. كان الجوّ باردًا مظلمًا، وصدى الماء يتردّد من الأسفل. رفع يوسف رأسه إلى دائرة ضوء صغيرة بعيدة فوقه… ثم أغمض عينيه ودعا الله في قلبه. ومن دعا الله فلن يكون وحيدًا حقًا.</p><p>وبعد سنين، في غرفة موصدة، سيتمزّق قميصه من جديد — هذه المرة من الخلف، العلامة التي أثبتت براءته لكل من رآها. ولما جاءه رسول الملك أخيرًا ليُخرجه من السجن، أبى يوسف أن يخرج حتى تتضح براءته للناس. تتبع قصة <em>«الفتى الأمين»</em> رحلته من تلك البئر إلى خزائن مصر، في تسعة فصول كُتبت للأطفال من سن 4 إلى 12 سنة، مع صفحة «فكّر معي» بعد كل فصل وكتاب تلوين مرافق — وكل تفصيلة فيها موثّقة من كتب التفسير والسيرة النبوية المعتمدة.</p>"
+    },
+    peopleCategory: "prophets",
+    virtues: ["trustworthiness", "truthfulness"],
+    sources: [
+      { en: "Qur'an, Sūrat Yūsuf 12:1–101", ar: "القرآن الكريم، سورة يوسف 1–101" },
+      { en: "Tafsīr al-Ṭabarī, Tafsīr Ibn Kathīr, Tafsīr al-Qurṭubī, and Tafsīr al-Saʿdī on Sūrat Yūsuf", ar: "تفسير الطبري وابن كثير والقرطبي والسعدي لسورة يوسف" }
+    ],
+    featured: true,
+    seo: {
+      metaTitle: {
+        en: "The Trusted Boy: Prophet Yusuf Story for Kids",
+        ar: "الفتى الأمين: قصة يوسف عليه السلام للأطفال"
+      },
+      metaDescription: {
+        en: "49-page illustrated story of Prophet Yusuf for ages 4-12. Teaches integrity. No prophet images. Coloring book included.",
+        ar: "قصة مصوّرة من 49 صفحة عن يوسف عليه السلام للأعمار 4–12 — من البئر إلى خزائن مصر، موثّقة من كتب التفسير المعتمدة. اقرأ عيّنة مجانية."
+      },
+      keywords: {
+        en: "Prophet Yusuf story for kids, Islamic stories for children PDF download, illustrated story books for children ages 4 to 12, best moral stories for children about honesty, Islamic children's books without images of prophets, printable story book for kids, prophet Joseph story for children Islamic, Islamic homeschool reading curriculum ages 4-12, Muslim kids coloring book printable, teaching modesty and integrity to children, Noor Tales",
+        ar: "قصة يوسف عليه السلام للأطفال, قصة سيدنا يوسف, كتاب أطفال إسلامي, قصص الأنبياء للأطفال, الأمانة والصدق, نور تيلز"
+      },
+      pinterestDescription: {
+        en: "Prophet Yusuf story for kids - a 49-page illustrated children's book for ages 4-12 that teaches honesty, integrity and modesty through story, not lecturing. Includes a 6-page printable coloring book, comprehension and moral discussion questions after every chapter, and a full academic reference page sourced from classical tafsir. Contains no images depicting the Prophet. Perfect for Muslim homeschool, Islamic weekend schools, and Ramadan activities. Instant PDF download - read a free sample first. Islamic children's books | Islamic stories for kids | Prophet stories for kids",
+        ar: "الفتى الأمين — قصة يوسف عليه السلام، من البئر إلى خزائن مصر. قصة إسلامية مصوّرة للأطفال من سن 4 إلى 12 سنة."
+      },
+      instagramHashtags: {
+        en: "#IslamicStoriesForKids #ProphetYusuf #MuslimKids #CharacterEducation #MuslimHomeschool #ChildrensBooks #StoryTime #TeachingIntegrity #KidsBooks #ProphetStories",
+        ar: "#يوسف_عليه_السلام #قصص_الأنبياء #كتب_أطفال #قصص_إسلامية_للأطفال #نور_تيلز #الأمانة #قصص_قرآنية"
+      }
+    },
+    purchase: { previewPdf: "previews/yusuf-trusted-boy.pdf", gumroadUrl: "https://qurashi1.gumroad.com/l/iklhtq" }
+  },
+
+  /* ---------- 5–7. PLACEHOLDERS — replace title/category/virtues/body
+                     with real content as each story is written ---------- */
+  {
+    id: "coming-soon-2",
+    title: { en: "Coming Soon", ar: "قريبًا" },
+    excerpt: {
+      en: "A new story is on its way. Check back soon.",
+      ar: "قصة جديدة في الطريق. تابعونا قريبًا."
+    },
+    body: { en: "<p>This story is being written.</p>", ar: "<p>هذه القصة قيد الإعداد.</p>" },
+    peopleCategory: "",
+    virtues: [],
+    sources: [],
+    featured: false,
+    seo: {},
+    purchase: { previewPdf: "", gumroadUrl: "" }
+  },
+  {
+    id: "coming-soon-3",
+    title: { en: "Coming Soon", ar: "قريبًا" },
+    excerpt: {
+      en: "A new story is on its way. Check back soon.",
+      ar: "قصة جديدة في الطريق. تابعونا قريبًا."
+    },
+    body: { en: "<p>This story is being written.</p>", ar: "<p>هذه القصة قيد الإعداد.</p>" },
+    peopleCategory: "",
+    virtues: [],
+    sources: [],
+    featured: false,
+    seo: {},
+    purchase: { previewPdf: "", gumroadUrl: "" }
+  },
+  {
+    id: "coming-soon-4",
+    title: { en: "Coming Soon", ar: "قريبًا" },
+    excerpt: {
+      en: "A new story is on its way. Check back soon.",
+      ar: "قصة جديدة في الطريق. تابعونا قريبًا."
+    },
+    body: { en: "<p>This story is being written.</p>", ar: "<p>هذه القصة قيد الإعداد.</p>" },
+    peopleCategory: "",
+    virtues: [],
+    sources: [],
+    featured: false,
+    seo: {},
+    purchase: { previewPdf: "", gumroadUrl: "" }
   }
 
 ];
